@@ -1,7 +1,26 @@
+/*** CSS RESET ***/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 body {
   font-family: Helvetica;
   font-size: 22px;
-  color: seashell;
+  color: pink;
   background-color: black;
   opacity: 0.9;
   text-align: center;
@@ -11,16 +30,18 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: inherit;  /* from body */
   width: 100%;
   height: 69px;
-  background-color: darkgrey;
   padding-left: 10px;
   padding-right: 10px;
   border-bottom: 1px solid seashell;
+  /*** Fix the position at the top of the vp ***/
   position: fixed;
   left: 0;
   top: 0;
   z-index: 5;
+  /*** ***/
 }
 
 header img {
@@ -29,7 +50,7 @@ header img {
 
 header a {
   text-decoration: underline;
-  color: inherit;
+  color: inherit; /* from body */
   padding-right: 20px;
 }
 
@@ -38,15 +59,23 @@ header a {
   flex-direction: column;
   align-items: center;
   width: 1200px;
-  margin-top: 70px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-top: 70px; /*** Make space for the header ***/
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .mission {
+  display: flex;
+  flex-direction: column;
   height: 700px;
   width: 1200px;
-  background-color: blue;
+  justify-content: center;
+  background-image: url("../images/img-mission-background.jpg");
+}
+
+.mission h2, h4 {
+  background-color: black;
+  padding-bottom: 10px;
 }
 
 .featured {
@@ -56,13 +85,23 @@ header a {
 }
 
 .locations {
-  height: 500px;
+  height: 600px; /*** Error in the redline which says 500px ***/
   width: 1200px;
-  background-color: darkblue;
+  background-image: url("../images/img-locations-background.jpg");
 }
 
-footer {
+.footer {
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   height: 200px;
-  background-color: green;
+  width: 1200px;
+
+}
+
+.copy {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
 }
