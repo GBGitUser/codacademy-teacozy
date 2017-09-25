@@ -18,9 +18,12 @@ time, mark, audio, video {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: Helvetica;
   font-size: 22px;
-  color: pink;
+  color: seashell;
   background-color: black;
   opacity: 0.9;
   text-align: center;
@@ -71,6 +74,7 @@ header a {
   width: 1200px;
   justify-content: center;
   background-image: url("../images/img-mission-background.jpg");
+  margin-top: 70px; /*** Make space for the header when accessed via nav link. NB needs to be maergin not padding to account for bg-image ***/
 }
 
 .mission h2, h4 {
@@ -79,15 +83,63 @@ header a {
 }
 
 .featured {
-  height: 500px;
-  width: 1000px;
-  background-color: lightblue;
+  width: 1000px; /* No height set as I just want the ht dictated by photo sizes and margins */
+  padding-top: 70px; /*** Make space for the header when accessed via nav link ***/
+}
+
+.featured h5 {
+  padding: 10px;
+}
+
+.teatype_collection {
+  display: flex;
+  flex-flow: row wrap; /* Just thought i'd use this rather than flex-direction for a change */
+  justify-content: center;
+}
+
+.teatype {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 10px;
+}
+
+.teatype img {
+  width: 300px;
+  height: 200px;
 }
 
 .locations {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start; /* not center as this pushed the black blocks too low. Fixed by making this flex-start and adding margin-top above the .locations h2 */
   height: 600px; /*** Error in the redline which says 500px ***/
   width: 1200px;
   background-image: url("../images/img-locations-background.jpg");
+  margin-top: 70px; /*** Make space for the header when accessed via nav link. NB needs to be margin not padding to account for bg-image ***/
+}
+
+.locations h2 {
+  margin-top: 70px;
+}
+
+.place_collection {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.place {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  opacity: 1;
+  margin: 15px 20px;
 }
 
 .footer {
@@ -101,7 +153,6 @@ header a {
 }
 
 .copy {
-  display: flex;
-  justify-content: flex-start;
+  align-self: flex-start;
   padding-left: 20px;
 }
